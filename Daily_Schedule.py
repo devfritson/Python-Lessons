@@ -7,11 +7,16 @@ daily_schedule = []
 
 while True:
     print()
-    print("Please select a valid option from the list below or enter quit to exit: ")
+    print("-" * 80)
+    print("-" * 80)
+    print("Please select an option from the list below or enter quit to exit: ")
     print()
     for i in schedule_list:
         print(i)
-
+    print()
+    print("Your daily schedule:")
+    for item in daily_schedule:
+        print(item)
     print()
     selected_option = input("Please enter your option here: ")
     print()
@@ -19,21 +24,12 @@ while True:
     if selected_option == "quit":
         break
     elif selected_option not in valid_options:
-        print("Invalid option! Please select a valid option from the list below: ")
+        print("Invalid option!")
         print()
-        for i in schedule_list:
-            print(i)
+
     else:
         selected_index = int(selected_option) - 1
-
-        if selected_index < len(schedule_list):
-            daily_schedule.append(schedule_list[selected_index])
-            print("Added to daily schedule:", schedule_list[selected_index])
-        else:
-            print("Invalid option! Please select a valid option from the list below: ")
-            print()
-            for i in schedule_list:
-                print(i)
+        daily_schedule.append(schedule_list[selected_index])
 
 print("Your daily schedule:")
 for item in daily_schedule:
